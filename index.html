@@ -35,7 +35,7 @@
         <div class="bg-amber-50 border-l-4 border-amber-500 p-4 rounded shadow-sm">
             <div class="flex items-start">
                 <div class="flex-shrink-0 text-amber-600 font-bold mr-3">📢 নোটিশ:</div>
-                <div id="displayNotice" class="text-amber-900 font-semibold text-sm"></div>
+                <div id="displayNotice" class="text-amber-900 font-semibold text-sm">লোড হচ্ছে...</div>
             </div>
         </div>
     </div>
@@ -57,20 +57,9 @@
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <a href="https://youtube.com/@redwanhushen?si=s8gRhdGu6_ujt2EF" target="_blank" class="block p-4 bg-white border border-slate-200 rounded-lg hover:shadow-md transition text-center font-bold text-slate-700 hover:text-blue-600">রেদওয়ান মেথড</a>
                 <a href="https://youtube.com/@acsfutureschool?si=mE92ug-6XBztAzon" target="_blank" class="block p-4 bg-white border border-slate-200 rounded-lg hover:shadow-md transition text-center font-bold text-slate-700 hover:text-blue-600">এসিএস ফিউচার</a>
-                <a href="https://udvash.com/" target="_blank" class="block p-4 bg-white border border-slate-200 rounded-lg hover:shadow-md transition text-center font-bold text-slate-700 hover:text-blue-600">উদ্ভাস-উন্মেষ</a>
-                <a href="https://10minuteschool.com/" target="_blank" class="block p-4 bg-white border border-slate-200 rounded-lg hover:shadow-md transition text-center font-bold text-slate-700 hover:text-blue-600">১০ মিনিট স্কুল</a>
             </div>
         </div>
     </main>
-
-    <div class="text-center mt-10">
-        <button onclick="openAdminModal()" class="text-xs text-slate-400 hover:text-blue-600 underline uppercase tracking-widest font-semibold">🔒 অ্যাডমিন প্যানেল</button>
-    </div>
-
-    <footer class="mt-16 py-8 border-t border-slate-200 text-center">
-        <p class="text-sm text-slate-500 font-medium">© ২০২৬ চিলড্রেনস হোম পাবলিক স্কুল | সকল স্বত্ব সংরক্ষিত।</p>
-        <p class="text-xs text-blue-600 font-bold mt-2 uppercase tracking-widest">Developed by Fahim</p>
-    </footer>
 
     <!-- Modals -->
     <div id="routineModal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-[200] hidden flex items-center justify-center p-4">
@@ -83,144 +72,42 @@
         </div>
     </div>
 
-    <div id="adminModal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
-        <div class="bg-white rounded-2xl max-w-4xl w-full p-8 shadow-2xl max-h-[80vh] overflow-y-auto">
-            <div class="flex justify-between items-center mb-6">
-                <h2 class="text-2xl font-bold">এডিটর প্যানেল</h2>
-                <button onclick="closeAdminModal()" class="text-slate-400 hover:text-red-500 font-bold">✕</button>
-            </div>
-            <form id="adminForm" class="space-y-4">
-                <div id="formInputsContainer" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
-                <button type="submit" class="w-full py-3 mt-4 rounded-lg bg-blue-600 text-white font-bold hover:bg-blue-700 transition">সংরক্ষণ করুন</button>
-            </form>
-        </div>
-    </div>
-
     <script>
-        let noticeText = "আগামী শনিবার বাংলা ১ম পত্র এবং আইসিটি (ICT) বিষয়ের সাপ্তাহিক পরীক্ষা অনুষ্ঠিত হবে। প্রস্তুতি নিয়ে আসার জন্য অনুরোধ করা হলো।";
-        let routineData = [
-            { day: "শনিবার", exam: "বাংলা ১ম পত্র ও আইসিটি" },
-            { day: "সোমবার", exam: "গণিত ও উচ্চতর গণিত" },
-            { day: "বুধবার", exam: "বিজ্ঞান ও ইংরেজি" }
-        ];
-        let homeworkData = [
-            { id: 1, name: "বাংলা ১ম পত্র", teacher: "এ. রহমান", text: '"বই পড়া" প্রবন্ধের মূলভাব।', pdf: "https://www.nctb.gov.bd/" },
-            { id: 2, name: "বাংলা ২য় পত্র", teacher: "এ. রহমান", text: 'বাংলা ধ্বনিবিজ্ঞান।', pdf: "https://www.nctb.gov.bd/" },
-            { id: 3, name: "English 1st Paper", teacher: "Ms. Nasrin", text: 'Unit 4: Taking off.', pdf: "https://www.nctb.gov.bd/" },
-            { id: 4, name: "English 2nd Paper", teacher: "Ms. Nasrin", text: 'Right form of verbs.', pdf: "https://www.nctb.gov.bd/" },
-            { id: 5, name: "গণিত", teacher: "কে. হাসান", text: 'অনুশীলনী ৩.১ এর ৫-১২।', pdf: "https://www.nctb.gov.bd/" },
-            { id: 6, name: "উচ্চতর গণিত", teacher: "কে. হাসান", text: 'উদাহরণ ১১ এবং ১২।', pdf: "https://www.nctb.gov.bd/" },
-            { id: 7, name: "পদার্থবিজ্ঞান", teacher: "ড. শাহিন", text: 'গতি অধ্যায়ের সূত্র।', pdf: "https://www.nctb.gov.bd/" },
-            { id: 8, name: "রসায়ন", teacher: "জনাব আলী", text: 'প্রথম ২০টি মৌল।', pdf: "https://www.nctb.gov.bd/" },
-            { id: 9, name: "জীববিজ্ঞান", teacher: "মিস ফাতেমা", text: 'উদ্ভিদ কোষ চিত্র।', pdf: "https://www.nctb.gov.bd/" },
-            { id: 10, name: "বাংলাদেশ ও বিশ্বপরিচয়", teacher: "জনাব রফিক", text: 'প্রথম অধ্যায় রিডিং।', pdf: "https://www.nctb.gov.bd/" },
-            { id: 11, name: "ডিজিটাল প্রযুক্তি", teacher: "জনাব তারেক", text: 'পাসওয়ার্ড পলিসি।', pdf: "https://www.nctb.gov.bd/" },
-            { id: 12, name: "ধর্ম ও নৈতিক শিক্ষা", teacher: "মওলানা আহমেদ", text: 'সৎ কাজের আদেশ।', pdf: "https://www.nctb.gov.bd/" }
-        ];
-
-        function loadData() {
-            if(localStorage.getItem('homeworkData')) homeworkData = JSON.parse(localStorage.getItem('homeworkData'));
-            if(localStorage.getItem('noticeText')) noticeText = localStorage.getItem('noticeText');
-            if(localStorage.getItem('routineData')) routineData = JSON.parse(localStorage.getItem('routineData'));
-        }
-
-        function saveData() {
-            localStorage.setItem('homeworkData', JSON.stringify(homeworkData));
-            localStorage.setItem('noticeText', noticeText);
-            localStorage.setItem('routineData', JSON.stringify(routineData));
-        }
-
-        function renderRoutine() {
-            const container = document.getElementById('routineList');
-            container.innerHTML = routineData.map(item => `
-                <div class="flex justify-between p-3 ${routineData.indexOf(item) % 2 === 0 ? 'bg-blue-50' : 'bg-slate-50'} rounded-lg">
-                    <span class="font-bold">${item.day}</span>
-                    <span class="text-blue-700">${item.exam}</span>
-                </div>
-            `).join('');
-        }
-
-        function renderDashboard() {
-            const grid = document.getElementById('homeworkGrid');
-            grid.innerHTML = homeworkData.map(item => `
-                <div class="glass-card rounded-xl p-6 subject-card flex flex-col justify-between">
-                    <div>
+        async function loadData() {
+            try {
+                const response = await fetch('data.json');
+                const data = await response.json();
+                
+                // নোটিশ সেট করা
+                document.getElementById('displayNotice').innerText = data.notice;
+                
+                // রুটিন রেন্ডার করা
+                const routineContainer = document.getElementById('routineList');
+                routineContainer.innerHTML = data.routine.map(item => `
+                    <div class="flex justify-between p-3 bg-blue-50 rounded-lg">
+                        <span class="font-bold">${item.day}</span>
+                        <span class="text-blue-700">${item.exam}</span>
+                    </div>
+                `).join('');
+                
+                // বাড়ির কাজ রেন্ডার করা
+                const grid = document.getElementById('homeworkGrid');
+                grid.innerHTML = data.homework.map(item => `
+                    <div class="glass-card rounded-xl p-6 subject-card">
                         <h3 class="text-lg font-bold text-blue-900 mb-1">${item.name}</h3>
                         <p class="text-xs text-blue-600 font-semibold mb-3 uppercase tracking-wide">শিক্ষক: ${item.teacher}</p>
-                        <p class="text-slate-600 text-sm mb-4 leading-relaxed">${item.text}</p>
+                        <p class="text-slate-600 text-sm leading-relaxed">${item.text}</p>
                     </div>
-                    <div class="space-y-2">
-                        <a href="${item.pdf}" target="_blank" class="block text-center py-2 bg-blue-600 text-white text-xs rounded-lg hover:bg-blue-700 transition">📖 বই ডাউনলোড (NCTB)</a>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        function renderAdminForm() {
-            const container = document.getElementById('formInputsContainer');
-            let adminHTML = `
-                <div class="col-span-full border p-4 rounded bg-amber-50">
-                    <label class="block text-xs font-bold text-amber-700 uppercase mb-2">নোটিশ বোর্ড আপডেট</label>
-                    <textarea id="noticeInput" class="w-full text-sm p-2 bg-white border rounded focus:outline-none focus:border-amber-500" rows="2">${noticeText}</textarea>
-                </div>
-                <div class="col-span-full border p-4 rounded bg-blue-50">
-                    <label class="block text-xs font-bold text-blue-700 uppercase mb-2">পরীক্ষার রুটিন আপডেট</label>
-                    ${routineData.map((item, index) => `
-                        <div class="flex gap-2 mb-2">
-                            <input type="text" id="day-${index}" value="${item.day}" class="w-1/3 p-1 border rounded" placeholder="দিন">
-                            <input type="text" id="exam-${index}" value="${item.exam}" class="w-2/3 p-1 border rounded" placeholder="বিষয়">
-                        </div>
-                    `).join('')}
-                </div>
-            `;
-            adminHTML += homeworkData.map(item => `
-                <div class="border p-3 rounded bg-slate-50">
-                    <label class="block text-[10px] font-bold text-slate-500 uppercase mb-2">${item.name}</label>
-                    <input type="text" data-id="${item.id}" data-field="text" value="${item.text}" class="w-full text-sm p-1 mb-2 bg-white border rounded focus:outline-none focus:border-blue-500" placeholder="বাড়ির কাজ">
-                    <input type="text" data-id="${item.id}" data-field="teacher" value="${item.teacher}" class="w-full text-sm p-1 bg-white border rounded focus:outline-none focus:border-blue-500" placeholder="শিক্ষকের নাম">
-                </div>
-            `).join('');
-            container.innerHTML = adminHTML;
-        }
-
-        document.getElementById('adminForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            noticeText = document.getElementById('noticeInput').value;
-            document.getElementById('displayNotice').innerText = noticeText;
-            
-            routineData.forEach((item, index) => {
-                item.day = document.getElementById(`day-${index}`).value;
-                item.exam = document.getElementById(`exam-${index}`).value;
-            });
-            
-            this.querySelectorAll('input[data-field]').forEach(input => {
-                const id = parseInt(input.getAttribute('data-id'));
-                const field = input.getAttribute('data-field');
-                const target = homeworkData.find(h => h.id === id);
-                if (target) target[field] = input.value;
-            });
-            
-            saveData();
-            renderRoutine();
-            renderDashboard();
-            closeAdminModal();
-            alert("সফলভাবে আপডেট হয়েছে!");
-        });
-
-        function openAdminModal() { 
-            if(prompt("পাসওয়ার্ড:") === "class9admin") {
-                renderAdminForm();
-                document.getElementById('adminModal').classList.remove('hidden'); 
+                `).join('');
+                
+            } catch (e) {
+                console.error("ডেটা লোড হতে সমস্যা হয়েছে:", e);
+                document.getElementById('displayNotice').innerText = "তথ্য লোড করতে সমস্যা হচ্ছে।";
             }
         }
-        
-        function closeAdminModal() { document.getElementById('adminModal').classList.add('hidden'); }
 
         window.onload = () => {
             loadData();
-            renderDashboard();
-            renderRoutine();
-            document.getElementById('displayNotice').innerText = noticeText;
             document.getElementById('currentDate').innerText = new Date().toLocaleDateString('bn-BD', { year: 'numeric', month: 'long', day: 'numeric' });
         };
     </script>
