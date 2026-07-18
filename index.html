@@ -86,6 +86,9 @@
         ];
 
         window.onload = () => {
+            // ব্রাউজারের পুরোনো মেমরি পরিষ্কার করা
+            localStorage.clear();
+            
             document.getElementById('displayNotice').innerText = noticeText;
             
             document.getElementById('routineList').innerHTML = routineData.map(item => `
