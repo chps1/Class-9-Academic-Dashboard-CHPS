@@ -6,7 +6,7 @@
     { "day": "বুধবার", "exam": "বিজ্ঞান ও ইংরেজি" }
   ],
   "homework": [
-    { "id": 1, "name": "বাংলা ১ম পত্র", "teacher": "এ. রহমান", "text": "বই পড়া প্রবন্ধের মূলভাব।" },
+    { "id": 1, "name": "বাংলা ১ম পত্র", "teacher": "ইউসুফ আলী", "text": "বই পড়া প্রবন্ধের মূলভাব।" },
     { "id": 2, "name": "বাংলা ২য় পত্র", "teacher": "এ. রহমান", "text": "বাংলা ধ্বনিবিজ্ঞান।" },
     { "id": 3, "name": "English 1st Paper", "teacher": "Ms. Nasrin", "text": "Unit 4: Taking off." },
     { "id": 4, "name": "English 2nd Paper", "teacher": "Ms. Nasrin", "text": "Right form of verbs." },
