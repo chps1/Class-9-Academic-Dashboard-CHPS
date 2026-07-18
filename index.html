@@ -73,41 +73,43 @@
     </div>
 
     <script>
-        async function loadData() {
-            try {
-                const response = await fetch('data.json');
-                const data = await response.json();
-                
-                // নোটিশ সেট করা
-                document.getElementById('displayNotice').innerText = data.notice;
-                
-                // রুটিন রেন্ডার করা
-                const routineContainer = document.getElementById('routineList');
-                routineContainer.innerHTML = data.routine.map(item => `
-                    <div class="flex justify-between p-3 bg-blue-50 rounded-lg">
-                        <span class="font-bold">${item.day}</span>
-                        <span class="text-blue-700">${item.exam}</span>
-                    </div>
-                `).join('');
-                
-                // বাড়ির কাজ রেন্ডার করা
-                const grid = document.getElementById('homeworkGrid');
-                grid.innerHTML = data.homework.map(item => `
-                    <div class="glass-card rounded-xl p-6 subject-card">
-                        <h3 class="text-lg font-bold text-blue-900 mb-1">${item.name}</h3>
-                        <p class="text-xs text-blue-600 font-semibold mb-3 uppercase tracking-wide">শিক্ষক: ${item.teacher}</p>
-                        <p class="text-slate-600 text-sm leading-relaxed">${item.text}</p>
-                    </div>
-                `).join('');
-                
-            } catch (e) {
-                console.error("ডেটা লোড হতে সমস্যা হয়েছে:", e);
-                document.getElementById('displayNotice').innerText = "তথ্য লোড করতে সমস্যা হচ্ছে।";
-            }
-        }
+        // এখানে আপনার মূল ডেটা সেট করা হয়েছে
+        const noticeText = "আগামী শনিবার বাংলা ১ম পত্র এবং আইসিটি বিষয়ের সাপ্তাহিক পরীক্ষা অনুষ্ঠিত হবে।";
+        
+        const routineData = [
+            { day: "শনিবার", exam: "বাংলা ১ম পত্র ও আইসিটি" },
+            { day: "সোমবার", exam: "গণিত ও উচ্চতর গণিত" }
+        ];
+
+        const homeworkData = [
+            { name: "বাংলা ১ম পত্র", teacher: "এ. রহমান", text: '"বই পড়া" প্রবন্ধের মূলভাব।' },
+            { name: "English 1st Paper", teacher: "Ms. Nasrin", text: "Unit 4: Taking off." }
+        ];
 
         window.onload = () => {
-            loadData();
+            // নোটিশ আপডেট
+            document.getElementById('displayNotice').innerText = noticeText;
+            
+            // রুটিন আপডেট
+            const routineContainer = document.getElementById('routineList');
+            routineContainer.innerHTML = routineData.map(item => `
+                <div class="flex justify-between p-3 bg-blue-50 rounded-lg">
+                    <span class="font-bold">${item.day}</span>
+                    <span class="text-blue-700">${item.exam}</span>
+                </div>
+            `).join('');
+            
+            // বাড়ির কাজ আপডেট
+            const grid = document.getElementById('homeworkGrid');
+            grid.innerHTML = homeworkData.map(item => `
+                <div class="glass-card rounded-xl p-6 subject-card">
+                    <h3 class="text-lg font-bold text-blue-900 mb-1">${item.name}</h3>
+                    <p class="text-xs text-blue-600 font-semibold mb-3 uppercase tracking-wide">শিক্ষক: ${item.teacher}</p>
+                    <p class="text-slate-600 text-sm leading-relaxed">${item.text}</p>
+                </div>
+            `).join('');
+
+            // তারিখ আপডেট
             document.getElementById('currentDate').innerText = new Date().toLocaleDateString('bn-BD', { year: 'numeric', month: 'long', day: 'numeric' });
         };
     </script>
