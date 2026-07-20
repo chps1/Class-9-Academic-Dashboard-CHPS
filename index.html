@@ -8,53 +8,53 @@
     <link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         body { 
-    /* পড়াশোনা জাতীয় ওয়াটারমার্ক ও ডট প্যাটার্ন ব্যাকগ্রাউন্ড */
-    background-image: 
-        radial-gradient(#3b82f6 0.75px, transparent 0.75px), 
-        radial-gradient(#3b82f6 0.75px, #f8fafc 0.75px);
-    background-size: 30px 30px;
-    background-position: 0 0, 15px 15px;
-    position: relative;
-}
+            font-family: 'Baloo Da 2', sans-serif; 
+            background-color: #f8fafc; 
+            color: #1e293b;
+            background-image: 
+                radial-gradient(#3b82f6 0.75px, transparent 0.75px), 
+                radial-gradient(#3b82f6 0.75px, #f8fafc 0.75px);
+            background-size: 30px 30px;
+            background-position: 0 0, 15px 15px;
+            position: relative;
+        }
 
-/* ব্যাকগ্রাউন্ডে চোখে পড়ার মতো ফ্লোটিং এডুকেশনাল ইলিমেন্টস */
-.edu-bg-decor {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: -1;
-    overflow: hidden;
-    opacity: 0.04;
-}
+        .edu-bg-decor {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            overflow: hidden;
+            opacity: 0.04;
+        }
 
-.edu-shape {
-    position: absolute;
-    font-size: 120px;
-    font-weight: bold;
-    color: #1e3a8a;
-    user-select: none;
-}
+        .edu-shape {
+            position: absolute;
+            font-size: 120px;
+            font-weight: bold;
+            color: #1e3a8a;
+            user-select: none;
+        }
 
-        body { font-family: 'Baloo Da 2', sans-serif; background-color: #f8fafc; color: #1e293b; }
         .nav-gradient { background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); }
-        .glass-card { background: white; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); }
+        .glass-card { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(4px); border: 1px solid #e2e8f0; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); }
         .subject-card { transition: all 0.3s; border-bottom: 3px solid transparent; }
         .subject-card:hover { border-bottom-color: #3b82f6; transform: translateY(-4px); }
     </style>
 </head>
 <body class="pb-16">
-<!-- ব্যাকগ্রাউন্ডের পড়াশোনা সম্পর্কিত জলছাপ বা চিহ্ন -->
-<div class="edu-bg-decor">
-    <div class="edu-shape" style="top: 5%; left: 5%;">📚</div>
-    <div class="edu-shape" style="top: 25%; right: 8%;">✏️</div>
-    <div class="edu-shape" style="top: 50%; left: 10%;">🎓</div>
-    <div class="edu-shape" style="top: 75%; right: 12%;">📐</div>
-    <div class="edu-shape" style="top: 90%; left: 45%;">🔬</div>
-</div>
-    
+
+    <div class="edu-bg-decor">
+        <div class="edu-shape" style="top: 5%; left: 5%;">📚</div>
+        <div class="edu-shape" style="top: 25%; right: 8%;">✏️</div>
+        <div class="edu-shape" style="top: 50%; left: 10%;">🎓</div>
+        <div class="edu-shape" style="top: 75%; right: 12%;">📐</div>
+        <div class="edu-shape" style="top: 90%; left: 45%;">🔬</div>
+    </div>
+
     <header class="nav-gradient text-white py-8 shadow-lg">
         <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
             <div>
@@ -88,27 +88,28 @@
             <h2 class="text-xl font-bold">আজকের পাঠ ও বাড়ির কাজ</h2>
         </div>
         <div id="homeworkGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
-            <!-- গুরুত্বপূর্ণ রিসোর্স -->
+            
         <div class="mt-12 mb-16">
             <div class="border-l-4 border-emerald-600 pl-4 mb-6">
                 <h2 class="text-xl font-bold">গুরুত্বপূর্ণ রিসোর্স</h2>
             </div>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <a href="https://youtube.com/@redwanhushen?si=s8gRhdGu6_ujt2EF" target="_blank" class="block p-4 bg-white border border-slate-200 rounded-lg hover:shadow-md transition text-center font-bold text-slate-700 hover:text-blue-600">রেদওয়ান মেথড</a>
-                <a href="https://youtube.com/@acsfutureschool?si=mE92ug-6XBztAzon" target="_blank" class="block p-4 bg-white border border-slate-200 rounded-lg hover:shadow-md transition text-center font-bold text-slate-700 hover:text-blue-600">এসিএস ফিউচার</a>
-                <a href="https://udvash.com/" target="_blank" class="block p-4 bg-white border border-slate-200 rounded-lg hover:shadow-md transition text-center font-bold text-slate-700 hover:text-blue-600">উদ্ভাস-উন্মেষ</a>
-                <a href="https://10minuteschool.com/" target="_blank" class="block p-4 bg-white border border-slate-200 rounded-lg hover:shadow-md transition text-center font-bold text-slate-700 hover:text-blue-600">১০ মিনিট স্কুল</a>
+                <a href="https://youtube.com/@redwanhushen?si=s8gRhdGu6_ujt2EF" target="_blank" class="block p-4 bg-white/90 border border-slate-200 rounded-lg hover:shadow-md transition text-center font-bold text-slate-700 hover:text-blue-600">রেদওয়ান মেথড</a>
+                <a href="https://youtube.com/@acsfutureschool?si=mE92ug-6XBztAzon" target="_blank" class="block p-4 bg-white/90 border border-slate-200 rounded-lg hover:shadow-md transition text-center font-bold text-slate-700 hover:text-blue-600">এসিএস ফিউচার</a>
+                <a href="https://udvash.com/" target="_blank" class="block p-4 bg-white/90 border border-slate-200 rounded-lg hover:shadow-md transition text-center font-bold text-slate-700 hover:text-blue-600">উদ্ভাস-উন্মেষ</a>
+                <a href="https://10minuteschool.com/" target="_blank" class="block p-4 bg-white/90 border border-slate-200 rounded-lg hover:shadow-md transition text-center font-bold text-slate-700 hover:text-blue-600">১০ মিনিট স্কুল</a>
             </div>
         </div>
 
-        <!-- ওয়েবসাইট নির্মাতার নাম -->
         <footer class="text-center mt-16 pt-8 border-t border-slate-200">
             <p class="text-sm text-slate-500">ওয়েবসাইটটি নির্মাতা: <strong>ফাহিম ফয়সাল</strong></p>
         </footer>
     </main>
- <footer class="text-center mt-16 pt-8 border-t border-slate-200">
+
+    <footer class="text-center mt-16 pt-8 border-t border-slate-200">
         <p class="text-sm text-slate-500">ওয়েবসাইটটি নির্মাতা: <strong>ফাহিম ফয়সাল</strong></p>
- </footer>
+    </footer>
+
     <div id="routineModal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-[200] hidden flex items-center justify-center p-4">
         <div class="bg-white rounded-2xl max-w-lg w-full p-6 shadow-2xl">
             <div class="flex justify-between items-center mb-4">
@@ -129,22 +130,21 @@
         ];
 
         const homeworkData = [
-            { name: "বাংলা ১ম পত্র", teacher: "ইউসুফ আলী", text: 'মানুষ মুহাম্মদ সঃ থেকে দ্বিতীয় পাঠ থেকে ২০টি জ্ঞানমূলক বাড়ির কাজ।' },
-            { name: "বাংলা ২য় পত্র", teacher: "ইউসুফ আলী", text: 'বাংলা দ্বিতীয় পত্র পড়া আপাতত বন্ধ।' },
-            { name: "English 1st Paper", teacher: "Nirob Hasan", text: 'আগামীকাল "stopping by woods on a snowy evening" এই কবিতার প্রশ্ন পড়া।' },
-            { name: "English 2nd Paper", teacher: "Nirob Hasan", text: 'আগামী রবিবার সিলেবাসের প্রথম দুইটি প্যারাগ্রাফ পড়া।' },
-            { name: "গণিত", teacher: "শফিকুল ইসলাম", text: 'নতুন অধ্যায় শুরু করা হয়েছে, আগামীকালের বাড়ির কাজ পাঁচটি চতুর্ভুজ এর সম্পাদ্য এবং বইয়ের ৪নং ও ৫নং সম্পাদ্য।' },
-            { name: "উচ্চতর গণিত", teacher: "বিদ্যাসাগর সূএধর", text: '৩.২ অনুশীলনীর ৩,৪নং পড়ানো হয়েছে।' },
-            { name: "পদার্থবিজ্ঞান", teacher: "রাজন", text: 'emty' },
-            { name: "রসায়ন", teacher: "মাহমুদুল হাসান", text: 'আগামী রবিবারের পেট্রিকেল দেওয়া হয়েছে ১৩৮ পৃষ্ঠার পরীক্ষণ।' },
-            { name: "জীববিজ্ঞান", teacher: "আমিরুল রশিদ", text: 'বর্তমানে যে অধ্যা পড়ানো হচ্ছে সে অধ্যায় থেকে জ্ঞানমূলক পড়া।' },
-            { name: "বাংলাদেশ ও বিশ্বপরিচয়", teacher: "সেলিম রেজা", text: 'ষষ্ঠ অধ্যায় সম্পূর্ণ।' },
-            { name: "ডিজিটাল প্রযুক্তি", teacher: "জোবায়ের মানিক", text: 'আগামী সপ্তাহে ক্লাস।' },
-            { name: "ধর্ম ও নৈতিক শিক্ষা", teacher: "মানসুর মন্ডল", text: 'হাদিস নয়' }
+            { name: "বাংলা ১ম পত্র", teacher: "ইউসুফ আলী", text: '<strong>মানুষ মুহাম্মদ সঃ থেকে দ্বিতীয় পাঠ থেকে ২০টি জ্ঞানমূলক বাড়ির কাজ।</strong>' },
+            { name: "বাংলা ২য় পত্র", teacher: "ইউসুফ আলী", text: '<strong>বাংলা দ্বিতীয় পত্র পড়া আপাতত বন্ধ।</strong>' },
+            { name: "English 1st Paper", teacher: "Nirob Hasan", text: '<strong>আগামীকাল "stopping by woods on a snowy evening" এই কবিতার প্রশ্ন পড়া।</strong>' },
+            { name: "English 2nd Paper", teacher: "Nirob Hasan", text: '<strong>আগামী রবিবার সিলেবাসের প্রথম দুইটি প্যারাগ্রাফ পড়া।</strong>' },
+            { name: "গণিত", teacher: "শফিকুল ইসলাম", text: '<strong>নতুন অধ্যায় শুরু করা হয়েছে, আগামীকালের বাড়ির কাজ পাঁচটি চতুর্ভুজ এর সম্পাদ্য এবং বইয়ের ৪নং ও ৫নং সম্পাদ্য।</strong>' },
+            { name: "উচ্চতর গণিত", teacher: "বিদ্যাসাগর সূএধর", text: '<strong>৩.২ অনুশীলনীর ৩,৪নং পড়ানো হয়েছে।</strong>' },
+            { name: "পদার্থবিজ্ঞান", teacher: "রাজন", text: '<strong>emty</strong>' },
+            { name: "রসায়ন", teacher: "মাহমুদুল হাসান", text: '<strong>আগামী রবিবারের পেট্রিকেল দেওয়া হয়েছে ১৩৮ পৃষ্ঠার পরীক্ষণ।</strong>' },
+            { name: "জীববিজ্ঞান", teacher: "আমিরুল রশিদ", text: '<strong>বর্তমানে যে অধ্যা পড়ানো হচ্ছে সে অধ্যায় থেকে জ্ঞানমূলক পড়া।</strong>' },
+            { name: "বাংলাদেশ ও বিশ্বপরিচয়", teacher: "সেলিম রেজা", text: '<strong>ষষ্ঠ অধ্যায় সম্পূর্ণ।</strong>' },
+            { name: "ডিজিটাল প্রযুক্তি", teacher: "জোবায়ের মানিক", text: '<strong>আগামী সপ্তাহে ক্লাস।</strong>' },
+            { name: "ধর্ম ও নৈতিক শিক্ষা", teacher: "মানসুর মন্ডল", text: '<strong>হাদিস নয়</strong>' }
         ];
 
         window.onload = () => {
-            // ব্রাউজারের পুরোনো মেমরি পরিষ্কার করা
             localStorage.clear();
             
             document.getElementById('displayNotice').innerText = noticeText;
@@ -160,7 +160,7 @@
                 <div class="glass-card rounded-xl p-6 subject-card">
                     <h3 class="text-lg font-bold text-blue-900 mb-1">${item.name}</h3>
                     <p class="text-xs text-blue-600 font-semibold mb-3 uppercase tracking-wide">শিক্ষক: ${item.teacher}</p>
-                    <p class="text-slate-600 text-sm leading-relaxed">${item.text}</p>
+                    <p class="text-slate-800 text-sm leading-relaxed">${item.text}</p>
                 </div>
             `).join('');
 
