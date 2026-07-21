@@ -71,11 +71,37 @@
     </header>
 
     <div class="max-w-7xl mx-auto px-4 mt-6">
-        <div class="bg-amber-50 border-l-4 border-amber-500 p-4 rounded shadow-sm">
+        <div class="bg-amber-50 border-l-4 border-amber-500 p-4 rounded shadow-sm mb-6">
             <div class="flex items-start">
                 <div class="flex-shrink-0 text-amber-600 font-bold mr-3">📢 নোটিশ:</div>
                 <div id="displayNotice" class="text-amber-900 font-semibold text-sm"></div>
             </div>
+        </div>
+
+        <!-- ⏳ পরীক্ষার কাউন্টডাউন সেকশন -->
+        <div class="glass-card rounded-2xl p-6 text-center shadow-md max-w-2xl mx-auto">
+            <h3 class="text-lg font-bold text-blue-900 mb-1">⏳ পরবর্তী সাপ্তাহিক পরীক্ষার কাউন্টডাউন</h3>
+            <p class="text-xs text-slate-500 font-semibold mb-4">বিষয়: বাংলা ১ম পত্র ও আইসিটি</p>
+            
+            <div id="countdownTimer" class="grid grid-cols-4 gap-3 max-w-md mx-auto">
+                <div class="bg-blue-50 border border-blue-200 p-3 rounded-xl">
+                    <span id="days" class="text-2xl font-black text-blue-700 block">০০</span>
+                    <span class="text-xs font-bold text-slate-600">দিন</span>
+                </div>
+                <div class="bg-blue-50 border border-blue-200 p-3 rounded-xl">
+                    <span id="hours" class="text-2xl font-black text-blue-700 block">০০</span>
+                    <span class="text-xs font-bold text-slate-600">ঘণ্টা</span>
+                </div>
+                <div class="bg-blue-50 border border-blue-200 p-3 rounded-xl">
+                    <span id="minutes" class="text-2xl font-black text-blue-700 block">০০</span>
+                    <span class="text-xs font-bold text-slate-600">মিনিট</span>
+                </div>
+                <div class="bg-blue-50 border border-blue-200 p-3 rounded-xl">
+                    <span id="seconds" class="text-2xl font-black text-blue-700 block">০০</span>
+                    <span class="text-xs font-bold text-slate-600">সেকেন্ড</span>
+                </div>
+            </div>
+            <p id="examFinishedMsg" class="hidden text-emerald-600 font-bold mt-3 text-lg">🎉 পরীক্ষা শুরু হয়ে গেছে অথবা শেষ হয়েছে!</p>
         </div>
     </div>
 
@@ -106,10 +132,6 @@
         </footer>
     </main>
 
-    <footer class="text-center mt-16 pt-8 border-t border-slate-200">
-        <p class="text-sm text-slate-500">ওয়েবসাইটটি নির্মাতা: <strong>ফাহিম ফয়সাল</strong></p>
-    </footer>
-
     <div id="routineModal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-[200] hidden flex items-center justify-center p-4">
         <div class="bg-white rounded-2xl max-w-lg w-full p-6 shadow-2xl">
             <div class="flex justify-between items-center mb-4">
@@ -137,12 +159,60 @@
             { name: "গণিত", teacher: "শফিকুল ইসলাম", text: '<strong>আগামীকালের বাড়ির কাজ ৭.২ এর উদাহরণ ৪নং ।</strong>' },
             { name: "উচ্চতর গণিত", teacher: "বিদ্যাসাগর সূএধর", text: '<strong>৩.২ অনুশীলনীর ৫নং পড়া।</strong>' },
             { name: "পদার্থবিজ্ঞান", teacher: "রাজন", text: '<strong>গ্যাসের প্রসারণ পড়ানো হয়েছে।</strong>' },
-            { name: "রসায়ন", teacher: "মাহমুদুল হাসান", text: '<strong>আগামী রবিবারের পেট্রিকেল দেওয়া হয়েছে ১৩৮ পৃষ্ঠার পরীক্ষণ এবং আজ লিমিটং বিক্রিয়া এর অংক করানো হয়েছে।</strong>' },
+            { name: "রসায়ন", teacher: "মাহমুদুল হাসান", text: '<strong>আগামী রবিবারের পেট্রিকেল দেওয়া হয়েছে ১৩৮ পৃষ্ঠার পরীক্ষণ এবং আজ লিমিটিং বিক্রিয়া এর অংক করানো হয়েছে।</strong>' },
             { name: "জীববিজ্ঞান", teacher: "আমিরুল রশিদ", text: '<strong>সপ্তম অধ্যায় এর ২টি সৃজনশীল পড়া এবং গ্যাসীয় বিনিময় পড়ানো হয়েছে।</strong>' },
             { name: "বাংলাদেশ ও বিশ্বপরিচয়", teacher: "সেলিম রেজা", text: '<strong>ষষ্ঠ অধ্যায় এর ৭৮,৭৯,৮০,৮১ পৃষ্ঠা পড়া।</strong>' },
             { name: "ডিজিটাল প্রযুক্তি", teacher: "জোবায়ের মানিক", text: '<strong>আগামী সপ্তাহে ক্লাস।</strong>' },
             { name: "ধর্ম ও নৈতিক শিক্ষা", teacher: "মানসুর মন্ডল", text: '<strong>হাদিস দশ(১০) নং।</strong>' }
         ];
+
+        // 🎯 সংখ্যাকে বাংলায় রূপান্তর
+        function toBanglaNum(n) {
+            const numMap = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
+            return String(n).padStart(2, '0').split('').map(d => numMap[d] || d).join('');
+        }
+
+        // ⏱️ আগামী শনিবার সকাল ৯:০০ টার জন্য তারিখ নির্ণয় ও টাইমার চালু
+        function getNextSaturday() {
+            const today = new Date();
+            const dayOfWeek = today.getDay();
+            let daysUntilSaturday = (6 - dayOfWeek + 7) % 7;
+            if (daysUntilSaturday === 0 && today.getHours() >= 9) {
+                daysUntilSaturday = 7;
+            }
+            const targetDate = new Date(today);
+            targetDate.setDate(today.getDate() + daysUntilSaturday);
+            targetDate.setHours(9, 0, 0, 0);
+            return targetDate;
+        }
+
+        function runTimer() {
+            const examTime = getNextSaturday().getTime();
+
+            function updateUI() {
+                const now = new Date().getTime();
+                const diff = examTime - now;
+
+                if (diff <= 0) {
+                    document.getElementById('countdownTimer').classList.add('hidden');
+                    document.getElementById('examFinishedMsg').classList.remove('hidden');
+                    return;
+                }
+
+                const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
+                const m = Math.floor((diff / 1000 / 60) % 60);
+                const s = Math.floor((diff / 1000) % 60);
+
+                document.getElementById('days').innerText = toBanglaNum(d);
+                document.getElementById('hours').innerText = toBanglaNum(h);
+                document.getElementById('minutes').innerText = toBanglaNum(m);
+                document.getElementById('seconds').innerText = toBanglaNum(s);
+            }
+
+            updateUI();
+            setInterval(updateUI, 1000);
+        }
 
         window.onload = () => {
             localStorage.clear();
@@ -165,6 +235,8 @@
             `).join('');
 
             document.getElementById('currentDate').innerText = new Date().toLocaleDateString('bn-BD', { year: 'numeric', month: 'long', day: 'numeric' });
+
+            runTimer();
         };
     </script>
 </body>
