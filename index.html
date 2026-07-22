@@ -43,6 +43,16 @@
         .glass-card { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(4px); border: 1px solid #e2e8f0; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); }
         .subject-card { transition: all 0.3s; border-bottom: 3px solid transparent; }
         .subject-card:hover { border-bottom-color: #3b82f6; transform: translateY(-4px); }
+
+        .permanent-shadow-card {
+            box-shadow: 0 12px 30px -5px rgba(37, 99, 235, 0.4), 0 8px 15px -6px rgba(37, 99, 235, 0.3);
+            transform: translateY(-2px);
+            transition: all 0.3s ease;
+        }
+        .permanent-shadow-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 35px -5px rgba(37, 99, 235, 0.5), 0 12px 18px -6px rgba(37, 99, 235, 0.4);
+        }
     </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-F51P05MRNH"></script>
@@ -124,7 +134,7 @@
         </div>
         <div id="homeworkGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
             
-        <div class="mt-12 mb-16">
+        <div class="mt-12 mb-10">
             <div class="border-l-4 border-emerald-600 pl-4 mb-6">
                 <h2 class="text-xl font-bold">গুরুত্বপূর্ণ রিসোর্স</h2>
             </div>
@@ -136,7 +146,18 @@
             </div>
         </div>
 
-        <footer class="text-center mt-16 pt-8 border-t border-slate-200">
+        <!-- 🔵 ফেসবুক গ্রুপ জয়েন সেকশন -->
+        <div class="mt-10 mb-8 max-w-2xl mx-auto">
+            <div class="bg-gradient-to-r from-blue-600 to-indigo-700 rounded-2xl p-6 text-white text-center permanent-shadow-card">
+                <p class="text-lg font-bold mb-3">আরো গুরুত্বপূর্ণ তথ্য পেতে জয়েন হন</p>
+                <a href="https://facebook.com/groups/3578242768933993/" target="_blank" class="inline-flex items-center justify-center bg-white text-blue-700 hover:bg-blue-50 px-6 py-2.5 rounded-full font-extrabold text-sm transition shadow-md gap-2">
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    ফেসবুক গ্রুপে জয়েন হন
+                </a>
+            </div>
+        </div>
+
+        <footer class="text-center mt-12 pt-8 border-t border-slate-200">
             <p class="text-sm text-slate-500">ওয়েবসাইটটি নির্মাতা: <strong>ফাহিম ফয়সাল</strong></p>
         </footer>
     </main>
