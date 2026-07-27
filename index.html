@@ -100,7 +100,7 @@
         <!-- ⏳ পরীক্ষার কাউন্টডাউন সেকশন -->
         <div class="glass-card rounded-2xl p-6 text-center shadow-md max-w-2xl mx-auto">
             <h3 class="text-lg font-bold text-blue-900 mb-1">⏳ পরবর্তী সাপ্তাহিক পরীক্ষার কাউন্টডাউন</h3>
-            <p class="text-xs text-slate-500 font-semibold mb-4">বিষয়: বাংলা ১ম পত্র ও আইসিটি</p>
+            <p class="text-xs text-slate-500 font-semibold mb-4">বিষয়: উচ্চতর গণিত ও ইসলাম শিক্ষা</p>
             
             <div id="countdownTimer" class="grid grid-cols-4 gap-3 max-w-md mx-auto">
                 <div class="bg-blue-50 border border-blue-200 p-3 rounded-xl">
@@ -173,27 +173,27 @@
     </div>
 
     <script>
-        const noticeText = "আগামী শনিবার বাংলা ১ম পত্র এবং আইসিটি (ICT) বিষয়ের সাপ্তাহিক পরীক্ষা অনুষ্ঠিত হবে। প্রস্তুতি নিয়ে আসার জন্য অনুরোধ করা হলো।";
+        const noticeText = "আগামী শনিবার উচ্চতর গণিত এবং ইসলাম শিক্ষা বিষয়ের সাপ্তাহিক পরীক্ষা অনুষ্ঠিত হবে। প্রস্তুতি নিয়ে আসার জন্য অনুরোধ করা হলো।";
         
         const routineData = [
-            { day: "শনিবার(সকাল ৯:০০টা)", exam: "বাংলা ১ম পত্র ও আইসিটি" },
+            { day: "শনিবার(সকাল ৯:০০টা)", exam: "উচ্চতর গণিত ও ইসলাম শিক্ষা" },
             { day: "শনিবার", exam: "পরবর্তী" },
             { day: "শনিবার", exam: "পরবর্তী" },
         ];
 
         const homeworkData = [
-            { name: "বাংলা ১ম পত্র", teacher: "ইউসুফ আলী", text: '<strong>মানুষ মোহাম্মদ সাঃ, সম্পূর্ণ পড়া এবং এই প্রবন্ধ থেকে আগামীকাল অনুশীলনের সৃজনশীল লিখতে দেওয়া হবে।</strong>' },
+            { name: "বাংলা ১ম পত্র", teacher: "ইউসুফ আলী", text: '<strong>আজকে পরীক্ষার খাতা দেওয়া হয়েছে</strong>' },
             { name: "বাংলা ২য় পত্র", teacher: "ইউসুফ আলী", text: '<strong>বাংলা দ্বিতীয় পত্র পড়া আপাতত বন্ধ।</strong>' },
-            { name: "English 1st Paper", teacher: "Nirob Hasan", text: '<strong>আগামীকাল "Solitude"এই কবিতার সকল প্রশ্ন পড়া।</strong>' },
-            { name: "English 2nd Paper", teacher: "Nirob Hasan", text: '<strong>আগামী রবিবার সিলেবাসের প্রথম দুইটি প্যারাগ্রাফ পড়া।</strong>' },
-            { name: "গণিত", teacher: "শফিকুল ইসলাম", text: '<strong>আগামীকালের বাড়ির কাজ ৭.২ এর অনুশীলন এর ৫,৮,৯,১০,১১ এবং উদাহরণ ৩,৪। ।</strong>' },
-            { name: "উচ্চতর গণিত", teacher: "বিদ্যাসাগর সূএধর", text: '<strong>নমুনা প্রশ্নের ৫নং ও ৬নং বাড়ির কাজ।</strong>' },
+            { name: "English 1st Paper", teacher: "Nirob Hasan", text: '<strong>আগামীকাল "Two Mothers remember"এই কবিতার সকল প্রশ্ন পড়া।</strong>' },
+            { name: "English 2nd Paper", teacher: "Nirob Hasan", text: '<strong>আগামী রবিবার সিলেবাসের পরের দুইটি প্যারাগ্রাফ পড়া।</strong>' },
+            { name: "গণিত", teacher: "শফিকুল ইসলাম", text: '<strong>আগামীকালের বাড়ির কাজ ৭.২ এর অনুশীলন এর ৬,৭,১২,১৩ এবং নমুনা প্রশ্ন ৫,৬। ।</strong>' },
+            { name: "উচ্চতর গণিত", teacher: "বিদ্যাসাগর সূএধর", text: '<strong>আগামীকাল ৩.২ অধ্যায়টির ওপর ক্লাস টেস্ট পরীক্ষা।</strong>' },
             { name: "পদার্থবিজ্ঞান", teacher: "রাজন", text: '<strong>গ্যাসের প্রসারণ পড়ানো হয়েছে।</strong>' },
-            { name: "রসায়ন", teacher: "মাহমুদুল হাসান", text: '<strong>আগামী রবিবারের পেট্রিকেল দেওয়া হয়েছে ১৩৮ পৃষ্ঠার পরীক্ষণ এবং আজ লিমিটিং বিক্রিয়া এর অংক করানো হয়েছে।</strong>' },
-            { name: "জীববিজ্ঞান", teacher: "আমিরুল রশিদ", text: '<strong>সপ্তম অধ্যায় এর আগামীকালের পড়া সৃজনশীল ২।</strong>' },
-            { name: "বাংলাদেশ ও বিশ্বপরিচয়", teacher: "সেলিম রেজা", text: '<strong>ষষ্ঠ অধ্যায় এর ৮১,৮২,৮৩ পৃষ্ঠা পড়া।</strong>' },
-            { name: "ডিজিটাল প্রযুক্তি", teacher: "জোবায়ের মানিক", text: '<strong>আগামী সপ্তাহে ক্লাস।</strong>' },
-            { name: "ধর্ম ও নৈতিক শিক্ষা", teacher: "মানসুর মন্ডল", text: '<strong>হাদিস দশ(১১) নং।</strong>' }
+            { name: "রসায়ন", teacher: "মাহমুদুল হাসান", text: '<strong>প্রমাণ তাপমাত্রায় SO2 এর ঘনত্ব নির্ণয় কর।</strong>' },
+            { name: "জীববিজ্ঞান", teacher: "আমিরুল রশিদ", text: '<strong>empty</strong>' },
+            { name: "বাংলাদেশ ও বিশ্বপরিচয়", teacher: "সেলিম রেজা", text: '<strong>ষষ্ঠ অধ্যায় এর ৯১,৯২,৯৩ পৃষ্ঠা পড়া।</strong>' },
+            { name: "ডিজিটাল প্রযুক্তি", teacher: "জোবায়ের মানিক", text: '<strong>চতুর্থ অধ্যায় ৫৪-৫৫ পৃষ্ঠা পড়া।</strong>' },
+            { name: "ধর্ম ও নৈতিক শিক্ষা", teacher: "মানসুর মন্ডল", text: '<strong>আগামী সপ্তাহে ক্লাস।</strong>' }
         ];
 
         // 🎯 সংখ্যাকে বাংলায় রূপান্তর
