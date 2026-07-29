@@ -3,13 +3,21 @@ backend:
   branch: main
 
 site_url: https://class-9-academic-dashboard-chps.netlify.app
-display_url: https://class-9-academic-dashboard-chps.netlify.app
 media_folder: "images"
 
 collections:
+  - name: "homework"
+    label: "আজকের পাঠ ও বাড়ির কাজ"
+    folder: "content/homework"
+    create: true
+    fields:
+      - {label: "Subject Name (যেমন: বাংলা ১ম পত্র)", name: "subject", widget: "string"}
+      - {label: "Teacher Name (যেমন: ইউসুফ আলী)", name: "teacher", widget: "string"}
+      - {label: "Homework Update (পড়া/আপডেট)", name: "details", widget: "text"}
+
   - name: "notices"
-    label: "Notice List"
-    folder: "notices"
+    label: "সাধারণ নোটিশ"
+    folder: "content/notices"
     create: true
     fields:
       - {label: "Title", name: "title", widget: "string"}
